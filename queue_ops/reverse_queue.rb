@@ -8,7 +8,8 @@ def reverse(queue)
 		popped_item = stack.pop # Remove item from stack
 		queue.unshift(popped_item) # Insert removed item into queue
 	end
+	queue
 end
 
 queue = [1,2,3,4,5]
-reverse(queue)
+print reverse(queue)
