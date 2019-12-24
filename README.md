@@ -1,1 +1,2 @@
-# coding_recipies
+# Data Structures and Algorithms
+This repository contains data structures and algorithms programmed in Ruby language which i had developed in freetime for practise and fun. Please use the same for reference and feel free to raise pull requests for any changes or additions.
