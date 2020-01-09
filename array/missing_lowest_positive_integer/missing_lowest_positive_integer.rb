@@ -14,5 +14,5 @@ def missing_positive_number(a)
 	return num+1
 end
 
-puts missing_positive_number([2,3,4,-1,1,1,0,2])
+puts missing_positive_number([2,3,4,-1,1,1,0,2,6])
 puts missing_positive_number([1,2,0])
