@@ -33,8 +33,8 @@ def display_list(head)
 end
 
 l1 = ListNode.new(1)
-l1.next = ListNode.new(2)
-l1.next.next = ListNode.new(4)
+l1.next = ListNode.new(1)
+l1.next.next = ListNode.new(1)
 
 l2 = ListNode.new(1)
 l2.next = ListNode.new(3)
