@@ -20,6 +20,10 @@ class PriorityQueue
 		min		
 	end
 
+	def get_min
+		@heap[1]
+	end	
+
 	private
 
 	def last_index
@@ -38,7 +42,7 @@ class PriorityQueue
 	def bubble_down(index)
 		left_child = 2 * index
 		right_child = 2 * index + 1
-		return if left_child > last_index
+		return if left_child > last_index # When left_child is greater than last index, all elements are traversed. Hence, return.
 		lesser_child_index = find_smaller_element(left_child,right_child)
 		if @heap[lesser_child_index] < @heap[index]
 			swap(lesser_child_index,index)
@@ -53,7 +57,7 @@ class PriorityQueue
 	end
 
 	def find_smaller_element(a,b)
-		return a if b > last_index
+		return a if b > last_index # When b is greater than last index, means its invalid. So, return.
 		@heap[a] < @heap[b] ? a : b
 	end	
 
@@ -63,14 +67,19 @@ end
 pq = PriorityQueue.new
 pq.insert(5)
 pq.insert(4)
+puts pq.get_min
 pq.insert(1)
 pq.insert(7)
 pq.insert(9)
 pq.insert(3)
+puts pq.get_min
 pq.insert(6)
 pq.insert(8)
-puts pq.pop
-puts pq.pop
-puts pq.pop
-puts pq.pop
-puts pq.pop
+puts pq.get_min
+pq.pop
+puts pq.get_min
+pq.pop
+pq.pop
+pq.pop
+pq.pop
+puts pq.get_min
