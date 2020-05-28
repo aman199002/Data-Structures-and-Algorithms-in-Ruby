@@ -35,12 +35,10 @@ def find_max_length(a)
 		sum = sum + a[i]
 		if sum == 0
 			max_length = i+1
-			ending_index = i
 		end
 		if h1[sum]
 			if max_length < i - h1[sum]
 				max_length = i - h1[sum]
-				ending_index = i
 			end	
 		else
 			h1[sum] = i
