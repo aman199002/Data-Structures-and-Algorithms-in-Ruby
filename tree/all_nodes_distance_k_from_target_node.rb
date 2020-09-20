@@ -37,23 +37,26 @@ def distance_k(root, target, k)
     visited = {}  # Initialize hash to store visited flag for each node.
     # Initialize queue to store node and current distance of node from target node.
     q = [[target,0]]  # Insert target node and diatnce as 0 in first element.
+    visited[target] = true
     # BFS/Level order traversal
     # Traverse till is queue is not empty
     while !q.empty? do
     	popped_node,dist = q.pop  # Pop last item from queue.
-    	visited[popped_node] = true  # Mark visited flag as true.
     	result << popped_node.val if dist == k  # Append in result if distance is equal to k. 
     	# Insert left node to queue if present and not visited by incrementing distance.
     	if popped_node.left && !visited[popped_node.left]
     		q.unshift([popped_node.left,dist+1])
+            visited[popped_node.left] = true
     	end	
     	# Insert right node to queue if present and not visited by incrementing distance.
     	if popped_node.right && !visited[popped_node.right]
     		q.unshift([popped_node.right,dist+1])
+            visited[popped_node.right] = true
     	end	
     	# Insert parent node to queue if present and not visited by incrementing distance.
     	if @parents[popped_node] && !visited[@parents[popped_node]]
     		q.unshift([@parents[popped_node],dist+1])
+            visited[@parents[popped_node]] = true
     	end	
     end	
     return result  # Return result
