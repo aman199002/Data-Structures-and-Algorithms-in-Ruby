@@ -18,8 +18,8 @@ def print_paths(node,path)
 		return
 	end
 	path << node.val
-	get_path(node.left,path)
-	get_path(node.right,path)
+	print_paths(node.left,path)
+	print_paths(node.right,path)
 	if node.left == nil && node.right == nil
 		puts "path = #{path}"
 	end	
