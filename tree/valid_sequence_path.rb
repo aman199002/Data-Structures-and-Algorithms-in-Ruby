@@ -42,17 +42,15 @@ def valid_sequence_util(node,a)
 	if node == nil || @valid == true
 		return
 	end
-	@arr << node.val  # Insert each node value to path array while traversing.
-	# If node is a leaf node, compare if @arr is equal to given array.
-	# If yes, then update boolean flag to true
-	if node.left == nil && node.right == nil
-		if @arr == a
-			@valid = true
-		end
-	end
+	@arr << node.val  # Insert each node value to path array while traversing.	
 	# Traverse each child node recursively first left and then right.
 	left = valid_sequence_util(node.left,a)
-	right = valid_sequence_util(node.right,a)
+	right = valid_sequence_util(node.right,a)	
+	# If node is a leaf node, compare if @arr is equal to given array.
+	# If yes, then update boolean flag to true
+	if node.left == nil && node.right == nil && @arr == a
+		@valid = true
+	end
 	# In tail recursion while returning from leaf node, pop path array @arr so that last node i.e leaf node will be removed.
 	@arr.pop
 	return @valid  # Return boolean flag
