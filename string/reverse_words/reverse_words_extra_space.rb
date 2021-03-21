@@ -16,6 +16,8 @@
 
 # @param {String} s
 # @return {String}
+# Time Complexity = O(n)
+# Space Complexity = O(n)
 def reverse_words(s)
     i = 0
     a = []
